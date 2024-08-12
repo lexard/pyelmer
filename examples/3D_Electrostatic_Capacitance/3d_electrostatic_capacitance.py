@@ -66,11 +66,11 @@ def extract_results_logfile(sim_dir):
     for i in range(len(log)):
         log[i] = log[i][:-1]
     for line in log:
-        if "StatElecSolve:  Capacitance" in line:  # extract capacitance from log file
+        if "StatElecSolver:  Capacitance" in line:  # extract capacitance from log file
             s = " ".join(line.split()).split(" ")
             capacitance = float(s[3])
         if (
-            "StatElecSolve:  Relative Change" in line
+            "StatElecSolver:  Relative Change" in line
         ):  # extract relative change from log file
             s = " ".join(line.split()).split(" ")
             rel_change = float(s[4])
